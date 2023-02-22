@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @garden %>
+
+<div>
+  <h2>MY GARDEN'S PLANTS:</h2>
+  <ul>
+    <% @garden.plants.each do |plant| %>
+      <li> <%= plant.name %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "Edit this garden", edit_garden_path(@garden) %> |
+  <%= link_to "Back to gardens", gardens_path %>
+
+  <%= button_to "Destroy this garden", @garden, method: :delete %>
+</div>
+
+
